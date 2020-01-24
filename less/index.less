@@ -1,8 +1,313 @@
 // Import your less files here:
+// Variables
+
+// Color pointers
+@nav-bg: @wild-sand;
+@nav-font: @river-bend;
+@nav-border: @sea-shell;
+
+@header-font-color: @ebony-clay;
+@main-font-color: @shuttle-gray;
+@main-border-color: @border-real;
+
+@footer-background: @wild-sand;
+@footer-font-color: @waterloo;
+
+// Color Vars
+@wild-sand: #F6F6F6;
+@river-bend: #454A59;
+@sea-shell: #F1F1F1;
+@ebony-clay: #23293B;
+@shuttle-gray: #5E6164;
+@porcelain: #F6F7F8;
+@waterloo: #81848E;
+@btn-bg-color: #22283A;
+@border-real: #dee2e6;
+
+// Mobile var
+@phone: ~"(max-width: 500px)";
+//Mixins
+.btn(@bg-color:#434657, @width:100px, @font-color:white){
+    display: block;
+    background-color: @bg-color;
+    margin: 0 10px 20px;
+    cursor: pointer;
+    width: @width;
+    height: 40px;
+    font-size: 2rem;
+    border-radius: 10px;
+    color:@font-color;
+}
+.center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+//Global
+// General Styles
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  html, body {
+    font-family: 'Ubuntu', sans-serif;
+    color: @main-font-color;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: 'Russo One', sans-serif;
+    color: @header-font-color;
+  }
+  
+  h2 {
+    font-size: 3.2rem;
+  }
+  
+  h3 {
+    font-size: 2.8rem;
+  }
+  
+  p {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+  
+  .container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;  
+  }
+
+  //Navigation
+  .navigation {
+    width: 100%;
+    display: flex;
+    padding: 30px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+ 
 
 
 
+    h1{
+        font-size: 4rem;
+        
+    
+    }
+    nav{
+        margin-top: 30px;
+    }
 
+    nav a{
+        text-decoration: none;
+        font-size: 2rem;
+        color:grey;
+        margin-left: 30px;
+       
+    }
+}
+  // Footer Styles
+footer {
+    color: #22283B;
+    background: #f4f4f4;
+    padding: 20px 0;
+    border: 1px double #e0e0e0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // Home Content
+
+.home {
+    
+    
+
+    .intro {
+        .img-content{
+            @media @phone { 
+                max-width: 200px;
+                .center()
+                
+                }
+        }
+      
+  
+      h2 {
+        padding: 15px;
+      }
+  
+      p {
+        padding:0 15px;
+      }
+    
+    }
+
+  
+    .space-images {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      @media @phone {
+         .sky, .launch {
+             display: none;
+         }
+         .blast{
+             width:90%;
+         }
+          
+      }
+  
+      img {
+        width: 28%;
+        margin: 20px 2.5%;
+        border-radius: 20px;
+        height: 100%;
+
+        
+
+      
+      }
+    }
+  
+    .visit-planets {
+      padding: 15px;
+  
+      h3 {
+        margin-top: 11px;
+      }
+  
+      p {
+        margin-top: 13px;
+      }
+    }
+  
+    .walk {
+      margin-top: 60px;
+      border-top: 1px solid @main-border-color;
+      padding: 50px 60px;
+      display: flex;
+      justify-content: center;
+
+      @media @phone { 
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 90%;
+        }
+  
+      .walk-text {
+        width: 50%;
+        @media @phone { 
+            
+            width: 100%;
+            }
+        
+  
+        h3 {
+          margin-bottom: 10px;
+        }
+  
+        p {
+          margin-bottom: 26px;
+
+          
+        }
+  
+        .sign-btn{ 
+            &:hover{
+                background-color: lightblue;
+                color: black;
+            }
+            @media @phone { 
+                width: 400px;
+                justify-content: center; 
+                height: 80px;
+               
+                &:hover{
+                    background-color: lightblue;
+                    color: black;
+                }    
+            }
+            .btn()
+            
+        }
+      }
+  
+      .walk-img {
+        width: 46%;
+        margin-left: 4%;
+
+        @media @phone { 
+            width:100%;
+            }
+        
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+        }
+      }
+    }
+  }// home
 
 
 
